@@ -9,14 +9,14 @@ const app = express();
 dotenv.config();
 
 const PORT = process.env.PORT || 8001;
-const CONNECTION_URL = process.env.REACT_APP_DBCONSTRING;
+const CONNECTION_URL = process.env.DBCONSTRING;
 
 //middleware
 app.use(express.json());
 app.use(Cors());
 
 //db config
-mongoose.connect(process.env.REACT_APP_DBCONSTRING, {
+mongoose.connect(CONNECTION_URL, {
 	useNewUrlParser: true,
 	useCreateIndex: true,
 	useUnifiedTopology: true
