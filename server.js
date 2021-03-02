@@ -13,8 +13,9 @@ const CONNECTION_URL = process.env.DBCONSTRING;
 
 //middleware
 app.use(express.json());
-app.use(Cors());
-
+app.use((req, res, next) => {
+	res.setHeader('Access-Control-Allow-Origin', '*'), res.setHeader('Access-Control-Allow-Headers', '*'), next();
+});
 //db config
 mongoose.connect(CONNECTION_URL, {
 	useNewUrlParser: true,
