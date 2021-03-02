@@ -2,7 +2,6 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import Cards from './dbCards.js';
-import Cors from 'cors';
 
 //app config
 const app = express();
@@ -25,7 +24,7 @@ mongoose.connect(CONNECTION_URL, {
 
 //api endpoints
 
-app.get('/', (req, res) => res.status(200).send('hellow world'));
+app.get('/', (req, res) => res.status(200).send('Greetings'));
 
 app.post('/cards', (req, res) => {
 	const dbCard = req.body;
